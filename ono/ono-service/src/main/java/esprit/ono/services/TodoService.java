@@ -33,4 +33,9 @@ public class TodoService {
 		em.remove(em.find(Todo.class, id));
 	}
 
+	public Todo find(Integer id) {
+		return em.find(Todo.class, id);
+		
+	}
+
 }

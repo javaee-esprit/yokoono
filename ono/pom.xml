@@ -52,8 +52,8 @@
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<tomcat.http.port>2000</tomcat.http.port>
-		<tomcat.script.user>script</tomcat.script.user>
-		<tomcat.script.user.password>tomcatscript</tomcat.script.user.password>
+		<tomcat.script.user>deployer</tomcat.script.user>
+		<tomcat.script.user.password>deployerpass</tomcat.script.user.password>
 
 		<org.springframework.version>4.2.1.RELEASE</org.springframework.version>
 		<aspectj.version>1.8.7</aspectj.version>
