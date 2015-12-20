@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<%@taglib uri="http://www.springframework.org/tags" prefix="s"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@taglib uri="http://www.springframework.org/tags/form" prefix="f"%>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>todos index</title>
+<title>todos list</title>
 </head>
 <body>
-
+<h2>All todos</h2>
 	<table>
 		<thead>
 			<tr>
@@ -23,21 +21,24 @@
 					<td>${t.id}</td>
 					<td>${t.text}</td>
 					<td>
-						<form action="update" method="post">
-							<input type="hidden" value="${t}" name="todo" /> <input
-								type="submit" value="Select"/>
+						<form action="/ono-web/todo/update" method="post">
+							<input type="hidden" value="${t.id}" name="id" />
+							<input type="hidden" value="${t.text}" name="text" />
+							<input type="submit" value="Update"/>
 						</form>
 					</td>
 					<td>
 						<form action="/ono-web/todo/delete" method="post">
-							<input type="hidden" value="${t.id}" name="id" /> <input
-								type="submit" value="Delete" />
+							<input type="hidden" value="${t.id}" name="id" />
+							 <input type="submit" value="Delete" />
 						</form>
 					</td>
 				</tr>
 			</c:forEach>
 		</tbody>
 	</table>
-
+	<form action="/ono-web/todo/create" method="get">
+		 <input type="submit" value="new todo" />
+	</form>
 </body>
 </html>
